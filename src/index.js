@@ -1,14 +1,22 @@
-function createThunkMiddleware(extraArgument) {
-  return ({ dispatch, getState }) => next => action => {
-    if (typeof action === 'function') {
-      return action(dispatch, getState, extraArgument);
-    }
+import {updateIn} from 'updeep'
 
-    return next(action);
-  };
+export const SET_STATE = 'SET_STATE'
+
+export function setState(key, payload) {
+  return {
+    type: SET_STATE,
+    key,
+    payload
+  }
 }
 
-const thunk = createThunkMiddleware();
-thunk.withExtraArgument = createThunkMiddleware;
+export function createReducer(initialState) {
+  return function reducer(state = initialState, action) {
+    if (action.type === SET_STATE) {
+      return updateIn(action.key, action.payload, state)
+    }
 
-export default thunk;
+    return state
+  }
+}
+
