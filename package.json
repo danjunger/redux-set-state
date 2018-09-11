@@ -1,8 +1,8 @@
 {
-  "name": "redux_tools",
+  "name": "redux-set-state",
   "version": "1.0.0",
   "description": "A useful package of the things you know you will need",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "lint": "eslint src test",
     "test": "echo \"Error: no test specified\" && exit 1",
