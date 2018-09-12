@@ -3,6 +3,8 @@ Redux Set State
 
 A generic reducer and action creator for Redux.
 
+[![build status](https://img.shields.io/travis/reduxjs/redux-thunk/master.svg?style=flat-square)](https://travis-ci.org/danjunger/redux-set-state)
+
 ```js
 yarn add @djunger02/redux-set-state
 ```
