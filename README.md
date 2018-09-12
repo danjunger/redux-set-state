@@ -79,11 +79,13 @@ Then, whenever you have a need to update a part of the store, use the provided a
 
 ```js
 dispatch(setState('isLoggedIn', true)); // set the top level property 'isLoggedIn' to true
-dispatch(setState('user', { email: 'user@example.com', name: 'Jane User' })); // merge the email and name properties onto the user object
-dispatch(setState('models', { '3': {id: 3, ...}, '4': {id: 4, ...} })); // merge a number of models into the store
-dispatch(setState('models.3', { id: 3, ... })); // merge/overwrite a single model into the store
-dispatch(setState('foos.3.bars.4', { id: 3, ... })); // merge/overwrite a single nested model into the store
+dispatch(setState('user', { email: 'user@example.com', name: 'Jane User' })); // set the email and name properties onto the user object
+dispatch(setState('models', { '3': {id: 3, ...}, '4': {id: 4, ...} })); // set a number of models into the store
+dispatch(setState('models.3', { id: 3, ... })); // overwrite a single model into the store
+dispatch(setState('foos.3.bars.4', { id: 3, ... })); // overwrite a single nested model into the store
 
+dispatch(mergeState('user', { name: 'Jane User' })); // merge the name properties onto the user object
+dispatch(mergeState('models', { '3': {...}, '4': {...} })); // merge a number of models into the store
 ```
 
 ## Caveats
