@@ -4,7 +4,9 @@
     "node": true
   },
   "globals": {
-    "expect": true
+    "expect": true,
+    "describe": true,
+    "test": true
   },
   "rules": {
     "padded-blocks": 0,
